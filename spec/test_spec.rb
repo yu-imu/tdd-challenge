@@ -13,33 +13,25 @@ end
 
 describe '円の面積' do
   area = Area.new
+
   it '計算実行' do
-    r = 20
+    r = [1, 2, 3, 3.4]
     pi=Math::PI
-    expect(area.caluculate(r)).to be r*r*pi
+    r.each do |num|
+      num  = num.to_i
+      expect(area.caluculate(num)).to be num*num*pi
+    end
   end
 
-  it '値を丸める' do
-    r = 20
-    s = area.caluculate(r)
+  it '値を丸めるて配列で返す' do
+    r = [1, 2, 3, 3.4]
     # binding.pry
-    expect(area.shisya(s)).to be s.round(0)
-  end
-
-  describe '少数で' do
-    it '切り捨てる時'do
-      area = 10.1
-      expect(area.int?).to be false
-
+    r.each do |num|
+      num  = num.to_i
+      s = area.caluculate(num)
+      expect(area.shisya(s)).to be s.round(0)
     end
-
-    it '切り上げる時' do
-      area = 10.5
-      expect(area.int?).to be false
-    end
-
   end
-
 
 end
 
