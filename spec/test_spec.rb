@@ -30,6 +30,22 @@ describe '円の面積' do
       expect(area.shisya(s)).to be s.round(0)
     end
   end
+
+  it '計算結果の配列が出力される' do
+    r = [1, 2, 3, 3.4]
+    area_array = []
+    # binding.pry
+    r.each do |num|
+      num  = num.to_i
+      s = area.caluculate(num)
+      area_array << area.shisya(s)
+    end
+    binding.pry
+    output = StringIO.new
+    output.write(area_array)
+    expect(output.string).to eq(area_array.to_a)
+  end
+
 end
 
 describe '標準出力' do
