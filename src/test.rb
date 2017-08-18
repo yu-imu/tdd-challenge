@@ -17,6 +17,10 @@ class Area
      r = gets.to_i
      Area.caluculate()
    end
+
+   def to_list(input)
+     input.read.split('\n').map {|line| line.to_f}
+   end
 end
 
 # class Stack

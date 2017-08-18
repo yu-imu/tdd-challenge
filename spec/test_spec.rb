@@ -1,4 +1,15 @@
 require 'spec_helper'
+require 'stringio'
+
+describe '標準入力' do
+  let(:sio) { StringIO.new('1\n2\n3\n3.4') }
+
+  it '入力が数値の配列になる' do
+    area = Area.new
+    expect(area.to_list(sio)).to eq([1, 2, 3, 3.4])
+  end
+end
+
 
 describe '円の面積' do
   area = Area.new
@@ -10,9 +21,8 @@ describe '円の面積' do
 
   it '値を丸める' do
     r = 20
-    pi=Math::PI
     s = area.caluculate(r)
-    binding.pry
+    # binding.pry
     expect(area.shisya(s)).to be s.round(0)
   end
 
