@@ -3,13 +3,11 @@ require 'stringio'
 
 describe '標準入力' do
   let(:sio) { StringIO.new('1\n2\n3\n3.4') }
-
   it '入力が数値の配列になる' do
     area = Area.new
     expect(area.to_list(sio)).to eq([1, 2, 3, 3.4])
   end
 end
-
 
 describe '円の面積' do
   area = Area.new
@@ -32,7 +30,14 @@ describe '円の面積' do
       expect(area.shisya(s)).to be s.round(0)
     end
   end
+end
 
+describe '標準出力' do
+  it '計算結果の配列が出力される' do
+    output = StringIO.new
+    output.write(area_array)
+    expect(output.string).to eq(area_array)
+  end
 end
 
 
