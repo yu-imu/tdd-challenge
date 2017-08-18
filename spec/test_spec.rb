@@ -40,21 +40,13 @@ describe '円の面積' do
       s = area.caluculate(num)
       area_array << area.shisya(s)
     end
-    binding.pry
-    output = StringIO.new
-    output.write(area_array)
-    expect(output.string).to eq(area_array.to_a)
-  end
-
-end
-
-describe '標準出力' do
-  it '計算結果の配列が出力される' do
     output = StringIO.new
     output.write(area_array)
     expect(output.string).to eq(area_array)
   end
+
 end
+
 
 
 # describe 'Stackは空？' do
