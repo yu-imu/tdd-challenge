@@ -1,8 +1,8 @@
 require'pry'
 class Area
-  def outPut(output, r)
-    r.each do |result|
-      output.puts result
+  def outPut(output, caluculate_results)
+    caluculate_results.each do |caluculate_result|
+      output.puts caluculate_result
     end
   end
 
