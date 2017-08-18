@@ -2,47 +2,36 @@ require 'spec_helper'
 require 'stringio'
 
 describe '標準入力' do
-  let(:sio) { StringIO.new('1\n2\n3\n3.4') }
+  let(:sio) { StringIO.new('10\n250\n100\n1.5') }
   it '入力が数値の配列になる' do
     area = Area.new
-    expect(area.to_list(sio)).to eq([1, 2, 3, 3.4])
+    expect(area.to_list(sio)).to eq([10, 250, 100, 1.5])
   end
 end
 
 describe '円の面積' do
-  area = Area.new
-
+  area=Area.new
   it '計算実行' do
-    r = [1, 2, 3, 3.4]
     pi=Math::PI
-    r.each do |num|
-      num  = num.to_i
-      expect(area.caluculate(num)).to be num*num*pi
+    result = [10, 250, 100, 1.5]
+    new_result = []
+    result.each do |num|
+      new_result << area.caluculate(num)
     end
-  end
-
-  it '値を丸めるて配列で返す' do
-    r = [1, 2, 3, 3.4]
-    # binding.pry
-    r.each do |num|
-      num  = num.to_i
-      s = area.caluculate(num)
-      expect(area.shisya(s)).to be s.round(0)
-    end
+    expect(new_result).to eq([314, 196350, 31416, 7])
   end
 
   it '計算結果の配列が出力される' do
-    r = [1, 2, 3, 3.4]
-    area_array = []
-    # binding.pry
-    r.each do |num|
-      num  = num.to_i
-      s = area.caluculate(num)
-      area_array << area.shisya(s)
-    end
     output = StringIO.new
-    output.write(area_array)
-    expect(output.string).to eq(area_array)
+    r= [314, 196350, 31416, 7]
+    area.outPut(output, r)
+    expect(output.string).to eq(<<-EOF
+314
+196350
+31416
+7
+EOF
+    )
   end
 
 end

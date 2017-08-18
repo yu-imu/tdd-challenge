@@ -1,16 +1,15 @@
 require'pry'
 class Area
-  def int?
-    true
+  def outPut(output, r)
+    r.each do |result|
+      output.puts result
+    end
   end
 
   def caluculate(r)
     pi = Math::PI
-    @area = r*r*pi
-  end
-
-  def shisya(area)
-    area.round(0)
+    result = r*r*pi
+    result.round(0)
   end
 
    def to_list(input)
