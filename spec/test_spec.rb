@@ -5,10 +5,9 @@ describe 'Stackは空？' do
     stack = Stack.new
     expect(stack.empty?).to be true
   end
-
   it 'stackが空ではない時' do
-
-
+    stack = Stack.new(1)
+    expect(stack.empty?).to be true
   end
 end
 
