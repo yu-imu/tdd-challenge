@@ -1,5 +1,24 @@
-2
-10
-10000
-10.5
-20.0
+abc@example.com
+a..bc@example.com
+
+ドメイン部
+  hoge@!#$%&'*+-/=?^_`{|}~.com
+  hoge@あいう.com
+  hoge@.example.com
+  hoge@example.com.
+  hoge@example..com
+  hoge@
+@
+  hoge@fuga@example.com
+ローカル部
+  ドットアトム部
+    !#$%&'*+-/=?^_`{|}~.hoge@example.com
+    .hoge@example.com
+    hoge.@example.com
+    a..bc@example.com
+    @example.com
+  クオーテッド文字列部
+    "hoge"@example.com
+    "!#$%&'*+-/=?^_`{|}~(),.:;<>@[]"\"@example.com
+    "hoge@example.com
+    "@example.com
