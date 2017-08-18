@@ -1,9 +1,11 @@
+
 class Area
   def int?
     true
   end
 
   r = gets.to_i
+
 end
 
 # class Stack
