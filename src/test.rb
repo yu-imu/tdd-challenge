@@ -1,8 +1,16 @@
-class Stack
-  def empty?
+class Area
+  def int?
     true
   end
-  def push
-    
-  end
+
+  r = gets.to_i
 end
+
+# class Stack
+#   def empty?
+#     true
+#   end
+#   def push
+#
+#   end
+# end
