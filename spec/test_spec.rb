@@ -1,9 +1,19 @@
 require 'spec_helper'
 
-describe '円の面積が' do
-  it '整数の時' do
-    area = 20
-    expect(area.int?).to be true
+describe '円の面積' do
+  area = Area.new
+  it '計算実行' do
+    r = 20
+    pi=Math::PI
+    expect(area.caluculate(r)).to be r*r*pi
+  end
+
+  it '値を丸める' do
+    r = 20
+    pi=Math::PI
+    s = area.caluculate(r)
+    binding.pry
+    expect(area.shisya(s)).to be r*r*pi.round(0)
   end
 
   describe '少数で' do
