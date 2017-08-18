@@ -13,7 +13,7 @@ describe '円の面積' do
     pi=Math::PI
     s = area.caluculate(r)
     binding.pry
-    expect(area.shisya(s)).to be r*r*pi.round(0)
+    expect(area.shisya(s)).to be s.round(0)
   end
 
   describe '少数で' do

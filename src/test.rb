@@ -10,7 +10,7 @@ class Area
   end
 
   def shisya(area)
-    return area.round(0)
+    area.round(0)
   end
 
    def get_r
