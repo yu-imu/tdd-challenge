@@ -34,16 +34,7 @@ class Main
   end
 end
 
-# action = Main.new
-# reader = Reader.new
-# writer = Writer.new
-# action.main(reader, writer)
-
-# class Stack
-#   def empty?
-#     true
-#   end
-#   def push
-#
-#   end
-# end
+ action = Main.new
+ reader = Reader.new
+ writer = Writer.new
+ action.main(reader, writer)
